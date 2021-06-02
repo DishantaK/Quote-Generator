@@ -25,6 +25,7 @@ let quotes = [
   { 
       quote:'Reading Is To The Mind, As Exercise Is To The Body.',
       source: 'Brian Tracy',
+      genre: 'Self-Help'
      
   },
   { 
@@ -78,11 +79,26 @@ function printQuote(){
      quoteString += `<span class="citation">${storeRandomQuote.citation}</span>`;
   }else if (storeRandomQuote.year) {
      quoteString += `<span class="year">${storeRandomQuote.citation}</span>`;
-  }
-  quoteString += `</p>`;
+  }else if (storeRandomQuote.genre) {
+    quoteString += `<span class="genre">${storeRandomQuote.genre}</span>`;
+ }
   
+  quoteString += `</p>`;
+  document.body.style.backgroundColor = randoColor();
   // return the string / quote body and add it to the inner HTML of the container
   return document.getElementById('quote-box').innerHTML = quoteString ;
+}
+
+function randoColor() {
+  //random # between 0 and 256
+   let r = Math.floor(Math.random() * 256);
+   let g = Math.floor(Math.random() * 256);
+   let b = Math.floor(Math.random() * 256);
+
+   // concat into one statement for rgb value
+   let getRGB =  `rgb(${r}, ${g}, ${b})`;
+   return getRGB
+
 }
 // Dishanta Kpatrick
 

@@ -105,6 +105,9 @@ h1 {
   font-style: italic;
 }
 
+.genre {
+  background-color: #ff0;
+}
 .citation:before {
   content: ", ";
   font-style: normal;
@@ -113,6 +116,12 @@ h1 {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.genre:before {
+  content: " ";
+  font-style: normal;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
