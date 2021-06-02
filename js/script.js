@@ -108,4 +108,7 @@ function randoColor() {
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+setInterval(printQuote, 10000);
+
+// Assistance on setTimeout / setInterval methods from https://www.w3schools.com/jsref/met_win_setinterval.asp
 
