@@ -18,7 +18,7 @@ let quotes = [
   },
   { 
       quote:'You Are Never Too Old To Set Another Goal Or To Dream A New Dream.',
-      source: 'C.S Lewis',
+      source: 'Les Brown',
       citation: 'Live Your Dreams',
       year: 1992
   },
