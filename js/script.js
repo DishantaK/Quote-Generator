@@ -12,49 +12,79 @@ project 1 - A Random Quote Generator
 ***/
 let quotes = [
   { 
-      quote:'',
-      source: '',
-      citation: '',
-      year: 1999
+      quote:'Don’t Let Yesterday Take Up Too Much Of Today.',
+      source: 'Will Rogers',
+    
   },
   { 
-      quote:'',
-      source: '',
-      citation: '',
-      year: 1999
+      quote:'You Are Never Too Old To Set Another Goal Or To Dream A New Dream.',
+      source: 'C.S Lewis',
+      citation: 'Live Your Dreams',
+      year: 1992
   },
   { 
-      quote:'',
-      source: '',
-      citation: '',
-      year: 1999
+      quote:'Reading Is To The Mind, As Exercise Is To The Body.',
+      source: 'Brian Tracy',
+     
   },
   { 
-      quote:'',
-      source: '',
-      citation: '',
-      year: 1999
+      quote:'You Don’t Have To Be Great To Start, But You Have To Start To Be Great.',
+      source: 'Zig Ziglar',
+     
   },
   { 
-      quote:'',
-      source: '',
-      citation: '',
-      year: 1999
+      quote:'Being happy never goes out of style.',
+      source: 'Lilly Pulitzer',
+     
+     
+  },
+  { 
+      quote:'When you learn, teach,',
+      source: 'Maya Angelou',
+      citation: 'I know why the caged bird sings',
+      year: 1969
   }
 ];
-
 
 /***
  * `getRandomQuote` function
 ***/
+function getRandomQuote(array){
+// generate random number between 0 and the array length
+let randomNumber = Math.floor(Math.random() * array.length);
 
+// return the quote using the random number as an index
+return array[randomNumber];
+
+}
 
 
 /***
  * `printQuote` function
 ***/
 
+function printQuote(){
+// Store the random quote
+  let storeRandomQuote = getRandomQuote(quotes);
 
+// Quote body
+  let quoteString = `
+  <p class="quote"> ${storeRandomQuote.quote} </p>
+  <p class="source"> ${storeRandomQuote.source}
+  `;
+
+// If a citation or year exists, add it to the Quote body w/ concatenation
+  if(storeRandomQuote.citation){
+     quoteString += `<span class="citation">${storeRandomQuote.citation}</span>`;
+  }else if (storeRandomQuote.year) {
+     quoteString += `<span class="year">${storeRandomQuote.citation}</span>`;
+  }
+  quoteString += `</p>`;
+  
+  // return the string / quote body and add it to the inner HTML of the container
+  return document.getElementById('quote-box').innerHTML = quoteString ;
+}
+// Dishanta Kpatrick
 
 /***
  * click event listener for the print quote button
@@ -62,3 +92,4 @@ let quotes = [
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
